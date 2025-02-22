@@ -117,8 +117,7 @@ Replace the placeholder values with your specific configurations:
 **Cleanup**
 To remove the deployed resources and avoid incurring charges:
 
-    ```bash
-    terraform destroy
+    terraform plan
 
 Confirm the destruction when prompted.
 
