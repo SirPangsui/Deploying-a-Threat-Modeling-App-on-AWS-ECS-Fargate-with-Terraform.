@@ -59,24 +59,26 @@ docker build -t your-repo-name/threat-model-app path/to/your/application/
 4. **Configure Terraform Variables:**
 Edit the terraform.tfvars file in the cloned repository to include your specific configurations:
 
-project_name     = "your-project-name"
-region           = "your-aws-region"
-vpc_cidr         = "your-vpc-cidr-block"
-public_subnets   = ["your-public-subnet-1-cidr", "your-public-subnet-2-cidr"]
-private_subnets  = ["your-private-subnet-1-cidr", "your-private-subnet-2-cidr"]
-domain_name      = "your-domain-name"
-ecs_image        = "aws_account_id.dkr.ecr.your-aws-region.amazonaws.com/threat-model-app:latest"
-hosted_zone_id   = "your-hosted-zone-id"
+   ```bash
+   project_name     = "your-project-name"
+   region           = "your-aws-region"
+   vpc_cidr         = "your-vpc-cidr-block"
+   public_subnets   = ["your-public-subnet-1-cidr", "your-public-subnet-2-cidr"]
+   private_subnets  = ["your-private-subnet-1-cidr", "your-private-subnet-2-cidr"]
+   domain_name      = "your-domain-name"
+   ecs_image        = "aws_account_id.dkr.ecr.your-aws-region.amazonaws.com/threat-model-app:latest"
+   hosted_zone_id   = "your-hosted-zone-id"
 
 Replace the placeholder values with your specific configurations:
-**your-project-name:** A unique name for your project.
-**your-aws-region:** The AWS region where you want to deploy the resources (e.g., us-east-1).
-**your-vpc-cidr-block:** The CIDR block for your VPC (e.g., 10.0.0.0/16).
-**your-public-subnet-1-cidr and your-public-subnet-2-cidr:** CIDR blocks for your public subnets (e.g., 10.0.1.0/24, 10.0.2.0/24).
-**your-private-subnet-1-cidr and your-private-subnet-2-cidr:** CIDR blocks for your private subnets (e.g., 10.0.3.0/24, 10.0.4.0/24).
-**your-domain-name:** Your registered domain name.
-**aws_account_id:** Your AWS account ID.
-**your-hosted-zone-id:** The ID of your Route 53 hosted zone.
+
+- **your-project-name:** A unique name for your project.
+- **your-aws-region:** The AWS region where you want to deploy the resources (e.g., us-east-1).
+- **your-vpc-cidr-block:** The CIDR block for your VPC (e.g., 10.0.0.0/16).
+- **your-public-subnet-1-cidr and your-public-subnet-2-cidr:** CIDR blocks for your public subnets (e.g., 10.0.1.0/24, 10.0.2.0/24).
+- **your-private-subnet-1-cidr and your-private-subnet-2-cidr:** CIDR blocks for your private subnets (e.g., 10.0.3.0/24, 10.0.4.0/24).
+- **your-domain-name:** Your registered domain name.
+- **aws_account_id:** Your AWS account ID.
+- **your-hosted-zone-id:** The ID of your Route 53 hosted zone.
 
 5. **Initialize and Deploy with Terraform:**
 - Navigate to the Terraform configuration directory:
