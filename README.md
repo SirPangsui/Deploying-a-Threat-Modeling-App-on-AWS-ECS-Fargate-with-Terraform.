@@ -1,6 +1,6 @@
 # Deploying a Containerized Threat Modeling Application on Amazon ECS and AWS Fargate with Terraform
 
-![Alt text](/aarchitecture.jpeg)
+![Alt text](/architecture.jpeg)
 
 This project demonstrates how to deploy a containerized Threat Modeling Application using Amazon Elastic Container Service (ECS) and AWS Fargate, orchestrated with Terraform. The architecture is designed for security, scalability, and high availability.
 
@@ -46,10 +46,15 @@ Before deploying the application, ensure you have the following:
 - Build the image using the following command
 docker build -t your-repo-name/threat-model-app path/to/your/application/
 - Tag and push the image to your Amazon Elastic Container Registry (ECR):
-aws ecr create-repository --repository-name threat-model-app
-docker tag your-repo-name/threat-model-app:latest aws_account_id.dkr.ecr.your-aws-region.amazonaws.com/threat-model-app:latest
-aws ecr get-login-password --region your-aws-region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.your-aws-region.amazonaws.com
-docker push aws_account_id.dkr.ecr.your-aws-region.amazonaws.com/threat-model-app:latest
+
+   ```bash
+  aws ecr create-repository --repository-name threat-model-app
+
+   docker tag your-repo-name/threat-model-app:latest aws_account_id.dkr.ecr.your-aws-region.amazonaws.com/threat-model-app:latest
+
+  aws ecr get-login-password --region your-aws-region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.your-aws-region.amazonaws.com
+
+  docker push aws_account_id.dkr.ecr.your-aws-region.amazonaws.com/threat-model-app:latest
 
 4. **Configure Terraform Variables:**
 Edit the terraform.tfvars file in the cloned repository to include your specific configurations:
@@ -75,16 +80,24 @@ Replace the placeholder values with your specific configurations:
 
 5. **Initialize and Deploy with Terraform:**
 - Navigate to the Terraform configuration directory:
-cd path/to/your-repo-name/terraform/
-
+  
+   ```bash
+  cd path/to/your-repo-name/terraform/
+   
 - Initialize Terraform:
-terraform init
+
+   ```bash
+   terraform init
 
 - Review the execution plan:
-terraform plan
+
+  ```bash
+  terraform plan
 
 - Apply the Terraform configuration to deploy resources:
-terraform apply
+
+  ```bash
+  terraform apply
 
 - Confirm the deployment when prompted.
 
@@ -101,7 +114,9 @@ terraform apply
 
 **Cleanup**
 To remove the deployed resources and avoid incurring charges:
-terraform destroy
+
+    ```bash
+    terraform destroy
 
 Confirm the destruction when prompted.
 
