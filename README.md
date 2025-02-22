@@ -111,7 +111,7 @@ Replace the placeholder values with your specific configurations:
 7. Security Considerations
 - **Private Subnets:** ECS tasks are deployed in private subnets to prevent direct internet exposure.
 - **NAT Gateway:** Allows outbound internet access for tasks without exposing them to inbound traffic.
-- **SSL/TLS Encryption: **Managed by AWS Certificate Manager to secure data in transit.
+- **SSL/TLS Encryption:** Managed by AWS Certificate Manager to secure data in transit.
 - **Security Groups:** Configured to allow only necessary traffic to and from resources.
 
 **Cleanup**
